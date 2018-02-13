@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 public class Bank {
+	
 	private int bankID;
 	public int accountNum = 0;
 	private ArrayList<Customer> customers;
@@ -25,5 +26,17 @@ public class Bank {
 	
 	public int getBankID(){
 		return bankID;
+	}
+	
+	public boolean withdraw(int amountRequested, Customer user){
+		if(amountRequested <= user.getBalance()){
+			user.deductFromBalance(amountRequested);
+			System.out.println("The amount requested has been successfully duducted from the account balance");
+			return true;
+		}
+		else{
+			System.out.println("Transaction Failed: Amount requested is greater than account balance.");
+			return false;
+		}
 	}
 }

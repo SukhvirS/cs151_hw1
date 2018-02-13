@@ -16,6 +16,10 @@ public class CashCard {
 		return cardNumber;
 	}
 	
+	public Customer getCardHolder(){
+		return holder;
+	}
+	
 	public int getCardBankID(){
 		return Integer.parseInt(Integer.toString(this.getCardNum()).substring(0,1));
 	}
